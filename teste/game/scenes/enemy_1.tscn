@@ -60,7 +60,7 @@ animations = [{
 size = Vector2(10, 21)
 
 [node name="Enemy_1" type="CharacterBody2D"]
-collision_mask = 2
+platform_wall_layers = 1
 script = ExtResource("1_h5k7m")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -81,5 +81,6 @@ frame_progress = 0.60132
 [node name="Cool2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_gb8yk")
+debug_color = Color(0.900498, 0.273347, 0.391389, 0.42)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
