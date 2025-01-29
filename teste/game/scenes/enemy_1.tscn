@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwnky3v5ouwhv"]
+[gd_scene load_steps=12 format=3 uid="uid://bra3uebxhah4l"]
 
 [ext_resource type="Script" path="res://game/scripts/enemy_1.gd" id="1_h5k7m"]
 [ext_resource type="Texture2D" uid="uid://b6a3wkxjm14t8" path="res://game/images/character.png" id="2_aq37f"]
@@ -60,6 +60,7 @@ animations = [{
 size = Vector2(10, 21)
 
 [node name="Enemy_1" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 platform_wall_layers = 1
 script = ExtResource("1_h5k7m")
 
