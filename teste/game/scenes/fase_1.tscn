@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=4 uid="uid://pqoxqkq5rh0"]
 
 [ext_resource type="Script" path="res://game/scripts/node_2d.gd" id="1_31f7e"]
-[ext_resource type="PackedScene" uid="uid://hedayj1ib4ok" path="res://game/scenes/didi.tscn" id="2_5r4em"]
+[ext_resource type="PackedScene" uid="uid://djpty745k74n8" path="res://game/scenes/didi.tscn" id="2_5r4em"]
 [ext_resource type="Texture2D" uid="uid://bnxwboj6iidc6" path="res://game/images/Tile_02.png" id="3_cfn8a"]
 [ext_resource type="PackedScene" uid="uid://bcsn65xeegepj" path="res://game/scenes/enemy_2.tscn" id="4_qo6p8"]
-[ext_resource type="PackedScene" uid="uid://dwnky3v5ouwhv" path="res://game/scenes/enemy_1.tscn" id="5_5o5pb"]
+[ext_resource type="PackedScene" uid="uid://bra3uebxhah4l" path="res://game/scenes/enemy_1.tscn" id="5_tpu2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxn52"]
 texture = ExtResource("3_cfn8a")
@@ -28,8 +28,7 @@ tile_map_data = PackedByteArray("AAABAA8AAQAAAAAAAAACAA8AAQAAAAAAAAADAA8AAQAAAAA
 tile_set = SubResource("TileSet_6wmov")
 
 [node name="Enemy2" parent="." instance=ExtResource("4_qo6p8")]
-position = Vector2(989, 416)
+position = Vector2(1314, 268)
 
-[node name="Enemy_1" parent="." instance=ExtResource("5_5o5pb")]
-position = Vector2(733, 502)
-scale = Vector2(4, 4)
+[node name="Enemy_1" parent="." instance=ExtResource("5_tpu2l")]
+position = Vector2(815, 404)
