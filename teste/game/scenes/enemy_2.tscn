@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcsn65xeegepj"]
+
+[ext_resource type="Texture2D" uid="uid://cr15r6k374i0c" path="res://game/images/FLYING.png" id="1_urxsw"]
+[ext_resource type="Script" path="res://game/scripts/enemy_2.gd" id="1_yhuxa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1sit"]
+atlas = ExtResource("1_urxsw")
+region = Rect2(0, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tj01"]
+atlas = ExtResource("1_urxsw")
+region = Rect2(81, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3ku4"]
+atlas = ExtResource("1_urxsw")
+region = Rect2(162, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2iw8"]
+atlas = ExtResource("1_urxsw")
+region = Rect2(243, 0, 81, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7py3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1sit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tj01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ku4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2iw8")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juhue"]
+size = Vector2(68, 65)
+
+[node name="Enemy2" type="Area2D"]
+script = ExtResource("1_yhuxa")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_y7py3")
+animation = &"fly"
+autoplay = "fly"
+frame = 1
+frame_progress = 0.193419
+
+[node name="Cool2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_juhue")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
