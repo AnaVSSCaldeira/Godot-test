@@ -123,3 +123,14 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Health_Bar" type="ProgressBar" parent="."]
+modulate = Color(0.923924, 0.114772, 0, 1)
+offset_left = -561.0
+offset_top = -306.0
+offset_right = -383.0
+offset_bottom = -279.0
+max_value = 5.0
+step = 1.0
+value = 5.0
+show_percentage = false
