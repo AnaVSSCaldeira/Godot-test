@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwnky3v5ouwhv"]
+
+[ext_resource type="Script" path="res://game/scripts/enemy_1.gd" id="1_h5k7m"]
+[ext_resource type="Texture2D" uid="uid://b6a3wkxjm14t8" path="res://game/images/character.png" id="2_aq37f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_844og"]
+size = Vector2(16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iintu"]
+atlas = ExtResource("2_aq37f")
+region = Rect2(0, 23, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mblm3"]
+atlas = ExtResource("2_aq37f")
+region = Rect2(16, 23, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lcrt"]
+atlas = ExtResource("2_aq37f")
+region = Rect2(32, 23, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8wnf"]
+atlas = ExtResource("2_aq37f")
+region = Rect2(48, 23, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qibuc"]
+atlas = ExtResource("2_aq37f")
+region = Rect2(64, 23, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4prvk"]
+atlas = ExtResource("2_aq37f")
+region = Rect2(80, 23, 16, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwg6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iintu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mblm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lcrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8wnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qibuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4prvk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb8yk"]
+size = Vector2(10, 21)
+
+[node name="Enemy_1" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_h5k7m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="DmgCool2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_844og")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bwg6m")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.60132
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Cool2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_gb8yk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

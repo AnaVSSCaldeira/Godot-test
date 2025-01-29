@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://djpty745k74n8"]
+[gd_scene load_steps=17 format=3 uid="uid://hedayj1ib4ok"]
 
 [ext_resource type="Script" path="res://game/scripts/player.gd" id="1_826m1"]
 [ext_resource type="Texture2D" uid="uid://ck73q6lyfnvij" path="res://game/images/DinoSprites_-_doux.png" id="1_b04sc"]
