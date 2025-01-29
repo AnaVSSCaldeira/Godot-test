@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d07wfogg2vard"]
+[gd_scene load_steps=3 format=3 uid="uid://8kv8nj38g86r"]
 
 [ext_resource type="Script" path="res://game/scripts/btn_start.gd" id="1_tykui"]
 [ext_resource type="Script" path="res://game/scripts/btn_exit.gd" id="2_g4hah"]
