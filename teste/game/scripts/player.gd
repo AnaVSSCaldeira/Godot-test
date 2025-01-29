@@ -1,11 +1,17 @@
 extends CharacterBody2D
 
 @onready var _animation_player = $Anim
+@onready var Health_bar = $Health_Bar
+
+@export var HP = 5
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var isJump = false
 
+func _ready():
+	Health_bar.max_value = HP
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
@@ -38,3 +44,9 @@ func _physics_process(delta: float) -> void:
 	if direction > 0: 
 		_animation_player.flip_h = false
 	move_and_slide()
+
+func damage_player(xeila):
+	Health_bar.value = Health_bar.value - xeila
+
+func heal_player(xeila):
+	Health_bar.value = Health_bar.value + xeila
