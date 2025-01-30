@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsdicaibtdhuk"]
+[gd_scene load_steps=9 format=3 uid="uid://dvw6qdpmp5m2m"]
 
+[ext_resource type="Script" path="res://game/scripts/collectables.gd" id="1_3wstu"]
 [ext_resource type="Texture2D" uid="uid://dkj7bkcp5fucs" path="res://game/images/Coin.png" id="1_loxq6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jxs5q"]
@@ -42,6 +43,7 @@ animations = [{
 radius = 18.0
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource("1_3wstu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
