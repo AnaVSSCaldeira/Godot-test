@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://djpty745k74n8"]
+[gd_scene load_steps=18 format=3 uid="uid://djpty745k74n8"]
 
 [ext_resource type="Script" path="res://game/scripts/player.gd" id="1_826m1"]
 [ext_resource type="Texture2D" uid="uid://ck73q6lyfnvij" path="res://game/images/DinoSprites_-_doux.png" id="1_b04sc"]
+[ext_resource type="PackedScene" uid="uid://dx0vtu7d8vy5e" path="res://game/scenes/hud_game.tscn" id="3_tbgeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3uyiy"]
 size = Vector2(68, 74.25)
@@ -108,7 +109,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Didi" type="CharacterBody2D"]
+[node name="Didi" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 script = ExtResource("1_826m1")
 
 [node name="Cool2D" type="CollisionShape2D" parent="."]
@@ -125,6 +127,12 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 drag_vertical_offset = -1.0
 drag_bottom_margin = 0.33
+
+[node name="HUD_Game" parent="Camera2D" instance=ExtResource("3_tbgeu")]
+offset_left = -585.0
+offset_top = -434.0
+offset_right = -585.0
+offset_bottom = -434.0
 
 [node name="Health_Bar" type="ProgressBar" parent="."]
 visible = false

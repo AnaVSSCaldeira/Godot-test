@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://pqoxqkq5rh0"]
+[gd_scene load_steps=10 format=4 uid="uid://pqoxqkq5rh0"]
 
 [ext_resource type="Script" path="res://game/scripts/node_2d.gd" id="1_31f7e"]
 [ext_resource type="PackedScene" uid="uid://djpty745k74n8" path="res://game/scenes/didi.tscn" id="2_5r4em"]
 [ext_resource type="Texture2D" uid="uid://bnxwboj6iidc6" path="res://game/images/Tile_02.png" id="3_cfn8a"]
 [ext_resource type="PackedScene" uid="uid://bcsn65xeegepj" path="res://game/scenes/enemy_2.tscn" id="4_qo6p8"]
 [ext_resource type="PackedScene" uid="uid://dwnky3v5ouwhv" path="res://game/scenes/enemy_1.tscn" id="5_tpu2l"]
-[ext_resource type="PackedScene" uid="uid://dx0vtu7d8vy5e" path="res://game/scenes/hud_game.tscn" id="6_gjp4h"]
+[ext_resource type="PackedScene" uid="uid://4xwbp47al3lr" path="res://game/scenes/flag.tscn" id="7_55p8k"]
+[ext_resource type="PackedScene" uid="uid://dvw6qdpmp5m2m" path="res://game/scenes/coin.tscn" id="7_rtr0c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxn52"]
 texture = ExtResource("3_cfn8a")
@@ -61,4 +62,14 @@ variation = 160
 [node name="Enemy5" parent="." instance=ExtResource("4_qo6p8")]
 position = Vector2(7433, 246)
 
-[node name="HUD_Game" parent="." instance=ExtResource("6_gjp4h")]
+[node name="Area2D" parent="." instance=ExtResource("7_rtr0c")]
+position = Vector2(308, 450)
+
+[node name="Area2D2" parent="." instance=ExtResource("7_rtr0c")]
+position = Vector2(440, 471)
+
+[node name="Area2D3" parent="." instance=ExtResource("7_rtr0c")]
+position = Vector2(640, 499)
+
+[node name="flag" parent="." instance=ExtResource("7_55p8k")]
+position = Vector2(8441, 312)

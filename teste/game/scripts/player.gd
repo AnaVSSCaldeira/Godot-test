@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var _animation_player = $Anim
-@onready var Health_bar = $Health_Bar
+var Health_bar
 
 @export var HP = 5
 
@@ -11,6 +11,7 @@ const JUMP_VELOCITY = -500.0
 var isJump = false
 
 func _ready():
+	Health_bar = $Camera2D.get_node("HUD_Game").get_node("Bar_health")
 	Health_bar.max_value = HP
 
 func _physics_process(delta: float) -> void:
