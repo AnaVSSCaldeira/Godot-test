@@ -10,7 +10,6 @@ var didi
 
 func _ready():
 	ready_pos = position.x
-	didi = get_parent().get_node("Didi")
 
 
 func _process(delta):
@@ -29,5 +28,7 @@ func _process(delta):
 		_animation_enemy.flip_h = false
 
 func _on_body_entered(body):
+	didi = get_parent().get_node("Didi")
 	if body == didi:
+		print("oi")
 		didi.damage_player(1)
