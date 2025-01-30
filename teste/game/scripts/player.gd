@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var _animation_player = $Anim
 var Health_bar
 
-@export var HP = 5
+@export var MAX_HP = 5
 
 
 const SPEED = 300.0
@@ -12,7 +12,7 @@ var isJump = false
 
 func _ready():
 	Health_bar = $Camera2D.get_node("HUD_Game").get_node("Bar_health")
-	Health_bar.max_value = HP
+	Health_bar.max_value = MAX_HP
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
@@ -48,6 +48,8 @@ func _physics_process(delta: float) -> void:
 
 func damage_player(xeila):
 	Health_bar.value = Health_bar.value - xeila
+	if Health_bar.value == 0:
+		Global.game_over()
 
 func heal_player(xeila):
 	Health_bar.value = Health_bar.value + xeila

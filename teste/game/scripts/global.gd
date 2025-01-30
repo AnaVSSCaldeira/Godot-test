@@ -12,6 +12,7 @@ func _process(delta):
 	if get_tree().current_scene and new_scene:
 		var instance = didi.instantiate()
 		get_tree().current_scene.add_child(instance)
+		instance.position.y = 416
 		label = instance.get_node("Camera2D").get_node("HUD_Game").get_node("Txt_coins")
 		label.text = "Coins: "+str(coins)
 		new_scene = false
