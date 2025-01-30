@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dx0vtu7d8vy5e"]
+
+[node name="HUD_Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bar_health" type="ProgressBar" parent="."]
+modulate = Color(0.923924, 0.114772, 0, 1)
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 191.0
+offset_bottom = 39.0
+max_value = 5.0
+step = 1.0
+value = 5.0
+show_percentage = false
+
+[node name="Txt_coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 99.0
+offset_bottom = 65.0
+text = "Coins: 999"
