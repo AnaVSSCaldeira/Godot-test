@@ -10,6 +10,7 @@ grow_vertical = 2
 
 [node name="Bar_health" type="ProgressBar" parent="."]
 modulate = Color(0.923924, 0.114772, 0, 1)
+layout_mode = 0
 offset_left = 13.0
 offset_top = 12.0
 offset_right = 191.0

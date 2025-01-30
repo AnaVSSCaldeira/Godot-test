@@ -20,7 +20,7 @@ func _on_body_entered(body):
 func apply_effect(body):
     match type:
         CollectibleType.COIN:
-            body.add_coins(value)  # Supondo que o jogador tenha um sistema de moedas
+            Global.add_coins(1)  # Supondo que o jogador tenha um sistema de moedas
         CollectibleType.HEART:
             body.heal_player(value)  # Supondo que o jogador tenha um sistema de vida
         _:

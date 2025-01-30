@@ -7,22 +7,21 @@ var level
 var new_scene = false
 var didi = preload("res://game/scenes/didi.tscn")
 
-func _ready():
-	pass
+func _process(delta):
 
-func _process(delta):	
 	if get_tree().current_scene and new_scene:
 		var instance = didi.instantiate()
 		get_tree().current_scene.add_child(instance)
 		new_scene = false
 
 func add_coins(value : int):
+	label = get_tree().current_scene.get_node("Didi").get_node("Camera2D").get_node("HUD_Game").get_node("Txt_coins")
 	coins += value
+	label.text = "Coins: "+str(coins)
 
 func game_over():
 	coins = 0
 	get_tree().change_scene_to_file("res://game/scenes/fase_1.tscn")
-	pass
 
 func change_scenes():
 	if(get_tree().current_scene):
