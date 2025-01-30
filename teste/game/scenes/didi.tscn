@@ -112,7 +112,6 @@ animations = [{
 [node name="Didi" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 script = ExtResource("1_826m1")
-MAX_HP = null
 
 [node name="Cool2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.12502)
